@@ -9,6 +9,8 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.bulana.pickerfortime.constant.Constants;
+
 public class MainActivity extends AppCompatActivity {
     private TextView timeTextView;
     @Override
@@ -26,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     public void processTimePickerResult(TimePicker view, int hourOfDay, int minute) {
         String hour = Integer.toString(hourOfDay);
         String CurrentMinute = Integer.toString(minute);
-        String timeMessage = "Time " + hour + ":" + CurrentMinute;
+        String timeMessage = "Time " + hour + Constants.COLON + CurrentMinute;
         timeTextView.setText(timeMessage);
         Toast.makeText(this, timeMessage, Toast.LENGTH_SHORT).show();
     }
